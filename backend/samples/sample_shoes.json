@@ -1,0 +1,20 @@
+{
+    "shoe_one": {
+        "colorway": "Bred",
+        "brand": "Jordan",
+        "modelName": "1",
+        "offerMax": 100,
+        "offerMin": 160,
+        "size": 13,
+        "sellerUsername": "josiahp"
+    }, 
+    "shoe_two": {
+        "colorway": "Bred",
+        "brand": "Jordan",
+        "modelName": "4",
+        "offerMax": 100,
+        "offerMin": 160,
+        "size": 13,
+        "sellerUsername": "josiahp"
+    }
+}

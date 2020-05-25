@@ -9,7 +9,7 @@ const shoeSchema = new Schema({
     offerMax: {type: Number, required: true},
     offerMin: {type: Number, required: true},
     size: {type: Number, required: true},
-    username: {type: String, required: true, trim: true},
+    sellerUsername: {type: String, required: true, trim: true},
   }, {
     timestamps: true,
 });
