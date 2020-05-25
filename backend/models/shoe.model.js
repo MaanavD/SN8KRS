@@ -10,16 +10,15 @@ const shoeSchema = new Schema({
     //   trim: true,
     //   minlength: 3
     // },
-    offerMin: Number,
-    offerMax: Number,
-    size: Number,
-    name: String,
-    tags: String
+    name: {type: String, required: true},
+    offerMax: {type: Number, required: true},
+    offerMin: {type: Number, required: true},
+    size: {type: Number, required: true},
   }, {
     timestamps: true,
 });
 
-const User = mongoose.model('User', userSchema);
+const Shoe = mongoose.model('Shoe', shoeSchema);
 
-module.exports = User;
+module.exports = Shoe;
 
