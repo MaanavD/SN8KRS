@@ -12,6 +12,7 @@ export default class createShoe extends Component {
         this.onChangeOfferMin = this.onChangeOfferMin.bind(this);
         this.onChangeSellerUsername = this.onChangeBrand.bind(this);
         this.onChangeSize = this.onChangeSize.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
 
         this.state = {
             brand: '',
@@ -22,6 +23,12 @@ export default class createShoe extends Component {
             sellerUsername: '',
             size: 0,
         }
+    }
+
+    componentDidMount() {
+        this.setState({
+            sellerUsername: 'jpparapp'
+        })
     }
 
     onChangeBrand(e) {
@@ -68,6 +75,7 @@ export default class createShoe extends Component {
 
     onSubmit(e) {
         e.preventDefault();
+        console.log('cool');
 
         const shoe = {
             brand: this.state.brand,
@@ -79,15 +87,86 @@ export default class createShoe extends Component {
             sellerUsername: this.state.sellerUsername,
         }
         // where we submit exercise to db
+        console.log('swag'); 
         console.log(shoe);
 
-        window.location = '/';
+        // window.location = '/';
     }
 
     render () {
         return (
             <div>
                 <p>You are on the createShoe component!</p>
+                <h3>Create new shoe</h3>
+                <form onSubmit={this.onSubmit}>
+                    <div className="form-group">
+                        <label>Brand: </label>
+                        <input  type="text"
+                        required
+                        className="form-control"
+                        value={this.state.brand}
+                        onChange={this.onChangeBrand}
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label>Colorway: </label>
+                        <input  type="text"
+                        required
+                        className="form-control"
+                        value={this.state.colorway}
+                        onChange={this.onChangeColorway}
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label>modelName: </label>
+                        <input  type="text"
+                        required
+                        className="form-control"
+                        value={this.state.modelName}
+                        onChange={this.onChangeModelName}
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label>offerMax: </label>
+                        <input  type="text"
+                        required
+                        className="form-control"
+                        value={this.state.offerMax}
+                        onChange={this.onChangeOfferMax}
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label>offerMin: </label>
+                        <input  type="text"
+                        required
+                        className="form-control"
+                        value={this.state.offerMin}
+                        onChange={this.onChangeOfferMin}
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label>sellerUsername: </label>
+                        <input  type="text"
+                        required
+                        className="form-control"
+                        value={this.state.sellerUsername}
+                        onChange={this.onChangeSellerUsername}
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label>size: </label>
+                        <input  type="text"
+                        required
+                        className="form-control"
+                        value={this.state.size}
+                        onChange={this.onChangeSize}
+                        />
+                    </div>
+
+                    <div className="form-group">
+                        <input type="submit" value="Create Shoe" className="btn btn-primary" />
+                    </div>
+                </form>
             </div>
         )
     }
