@@ -75,7 +75,6 @@ export default class createShoe extends Component {
 
     onSubmit(e) {
         e.preventDefault();
-        console.log('cool');
 
         const shoe = {
             brand: this.state.brand,
@@ -87,7 +86,6 @@ export default class createShoe extends Component {
             sellerUsername: this.state.sellerUsername,
         }
         // where we submit exercise to db
-        console.log('swag'); 
         console.log(shoe);
 
         // window.location = '/';
