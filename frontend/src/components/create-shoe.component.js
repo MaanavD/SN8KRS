@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 export default class createShoe extends Component {
 
@@ -87,6 +88,19 @@ export default class createShoe extends Component {
         }
         // where we submit exercise to db
         console.log(shoe);
+
+        axios.post('http://localhost:5000/shoes/add', shoe)
+        .then(res => console.log(res.data));
+
+        this.setState({
+            brand: '',
+            colorway: '',
+            modelName: '',
+            offerMax: 0,
+            offerMin: 0,
+            size: 0,
+            sellerUsername: ''
+        })
 
         // window.location = '/';
     }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 export default class createUser extends Component {
 
@@ -46,6 +47,14 @@ export default class createUser extends Component {
         // where we submit exercise to db
         console.log(user);
 
+        axios.post('http://localhost:5000/users/add', user)
+        .then(res => console.log(res.data));
+
+        this.setState({
+            email: '',
+            password: '',
+            username: ''
+        })
         // window.location = '/';
     }
 
