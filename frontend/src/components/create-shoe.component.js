@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 function CreateShoe(props) {
     return <h1>You are on the Create Shoe component</h1>;
