@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 
-export default class editShoe extends Component {
-    render () {
-        return (
-            <div>
-                <p>You are on the editShoe component!</p>
-            </div>
-        )
-    }
+function EditShoe(props) {
+    return <h1>You are on the Edit Shoe component</h1>;
 }
+
+export default EditShoe;

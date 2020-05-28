@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 
-export default class shoesList extends Component {
-    render () {
-        return (
-            <div>
-                <p>You are on the Shoes List component!</p>
-            </div>
-        )
-    }
+function ShoesList(props) {
+    return <h1>You are on the Shoes List component</h1>;
 }
+
+export default ShoesList;
