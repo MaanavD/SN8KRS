@@ -8,6 +8,8 @@ import EditShoe from "./components/edit-shoe.component.js";
 import CreateShoe from "./components/create-shoe.component.js";
 import CreateUser from "./components/create-user.component.js";
 import Splash from "./components/splash.component.js";
+import Chat from './components/Chat/chat.component.js';
+import Join from './components/Join/join.component.js';
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
         <Route path="/edit/:id" component={EditShoe} /> 
         <Route path="/create" component={CreateShoe} />
         <Route path="/user" component={CreateUser} />
+        <Route path="/chat" component={Chat} />
+        <Route path="/join" component={Join} />
     </div>
     </Router>
   );
