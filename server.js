@@ -23,10 +23,12 @@ connection.once('open', () => {
 const usersRouter = require('./routes/users');
 const shoesRouter = require('./routes/shoes');
 const offersRouter = require('./routes/offers');
+const messagesRouter = require('./routes/messages');
 
 app.use('/users', usersRouter);
 app.use('/shoes', shoesRouter);
 app.use('/offers', offersRouter);
+app.use('/messages', messagesRouter);
 
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client", "build", "index.html"));
