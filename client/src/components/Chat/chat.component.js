@@ -19,7 +19,7 @@ const Chat = ({ location }) => {
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
   const ENDPOINT = 'localhost:9000';
-
+  
   useEffect(() => {
     const { name, room } = queryString.parse(location.search);
 
@@ -27,6 +27,19 @@ const Chat = ({ location }) => {
 
     setRoom(room);
     setName(name);
+
+    axios.get(`http://localhost:5000/messages/room/${room}`)
+    .then(res => {
+      const mongoMessages = res.data;
+      if (mongoMessages.length >= 1) {
+        let lastMongoMsg = mongoMessages[mongoMessages.length - 1]
+        let newMsg = {
+          user: lastMongoMsg.senderName,
+          text: lastMongoMsg.message
+        }
+        setMessages(messages => [ newMsg, ...messages ]);
+      }
+    })
 
     socket.emit('join', { name, room }, (error) => {
       if(error) {
