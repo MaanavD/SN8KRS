@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardContent, Typography } from '@material-ui/core'
+import { Card, CardContent, Button, CardActions, Typography } from '@material-ui/core'
 
 function ShoeCard(props) {
     return (<div>
@@ -24,6 +24,9 @@ function ShoeCard(props) {
                     <strong>Last updated at:</strong> {props.shoe.updatedAt}
                 </Typography>
             </CardContent>
+            <CardActions>
+                <Button variant="contained" color="primary" size="small">Submit offer!</Button>
+            </CardActions>
         </Card>
     </div>)
 }
