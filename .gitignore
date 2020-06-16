@@ -30,3 +30,5 @@ yarn-error.log*
 *.orig
 .idea/
 .vscode/
+
+messaging/node_modules
