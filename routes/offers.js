@@ -12,16 +12,16 @@ router.get("/", async (req, res) => {
 
 router.post("/add", async (req, res) => {
   try {
-    let buyerUsername = req.body.buyerUsername;
-    let offerAmount = Number(req.body.offerAmount);
-    let shoeId = req.body.shoeId;
-
+    let [buyerUsername, offerAmount, shoeId] = [
+      req.body.buyerUsername,
+      Number(req.body.offerAmount),
+      req.body.shoeId,
+    ];
     let newOffer = new Offer({
       buyerUsername,
       offerAmount,
       shoeId,
     });
-
     await newOffer.save();
     res.json("Offer saved");
   } catch (err) {
