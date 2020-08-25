@@ -2,9 +2,9 @@ import React from 'react';
 
 function ShoeCard(props) {
   return (
-    <div className="card text-center" style={{width: 18 + 'em'}}>
+    <div className="card text-center" style={{width: 12 + 'em'}}>
       <h5 className="card-title">{props.modelName}</h5>
-      <img src="..." className="card-img-top" alt="..."></img>
+      <img src="https://image.flaticon.com/icons/svg/1785/1785348.svg" className="card-img-top" alt="Sample Image"></img>
       <div className="card-body">
         <p className="card-text">Brand: {props.brand}</p>
         <p className="card-text">Size: {props.size}</p>
