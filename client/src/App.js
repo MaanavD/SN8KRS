@@ -1,5 +1,7 @@
 import React from 'react';
 import './App.css';
+import { BrowserRouter as Router, Route} from "react-router-dom";
+import ShoesList from "./components/shoes-list.component";
 import Splash from './Splash'
 // eslint-disable-next-line
 import fontawesome from '@fortawesome/fontawesome-free'
@@ -11,9 +13,12 @@ library.add(fab, fas)
 
 function App() {
   return (
-    <div className="App">
-      <Splash></Splash>
-    </div>
+    <Router>
+      <div>
+        <Route path="/" component={Splash} />
+        <Route path="/shoes" component={ShoesList} />
+      </div>
+    </Router>
   );
 }
 

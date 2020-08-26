@@ -4,7 +4,7 @@ const Signup = () => {
     return (
         <div className="card bg-white mb-3">
             <div className="card-body">
-              <div className="h3 pb-2">Sign up</div>
+              <div className="h3 pb-2 text-center">Sign up</div>
               <form>
               <div className="form-group">
                   <input

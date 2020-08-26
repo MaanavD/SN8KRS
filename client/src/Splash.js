@@ -27,16 +27,12 @@ const setLog = () => {
         {login? <Login></Login> : <Signup></Signup> }
           <div className="card bg-light mb-3">
             <div className="card-body">
-              {login ? <p className="card-text lead">
+              {login ? <p className="card-text lead text-center">
                 Don't have an account?{" "}
-                <strong>
                   <label type="button" className="btn btn-link mt-1" onClick={setLog}>Sign up</label>
-                </strong>
-              </p> : <p className="card-text lead">
+              </p> : <p className="card-text lead text-center">
                 Have an account?{" "}
-                <strong>
                 <label type="button" className="btn btn-link mt-1" onClick={setLog}>Log in</label>
-                </strong>
               </p>}
             </div>
           </div>

@@ -4,7 +4,7 @@ const Login = () => {
     return (
         <div className="card bg-white mb-3">
             <div className="card-body">
-              <div className="h3 pb-2">Log in</div>
+              <div className="h3 pb-2 text-center">Log in</div>
               <form>
                 <div className="form-group">
                   <input
