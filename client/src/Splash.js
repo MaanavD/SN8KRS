@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Login from './Login'
 import Signup from './Signup'
 
@@ -31,12 +30,12 @@ const setLog = () => {
               {login ? <p className="card-text lead">
                 Don't have an account?{" "}
                 <strong>
-                  <a href="#" onClick={setLog}>Sign up</a>
+                  <label type="button" className="btn btn-link mt-1" onClick={setLog}>Sign up</label>
                 </strong>
               </p> : <p className="card-text lead">
-                Have an account? {" "}
+                Have an account?{" "}
                 <strong>
-                  <a href="#" onClick={setLog}>Log in</a>
+                <label type="button" className="btn btn-link mt-1" onClick={setLog}>Log in</label>
                 </strong>
               </p>}
             </div>
