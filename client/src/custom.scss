@@ -1,4 +1,22 @@
 // Override default variables before the import
-$body-bg: #000;
+$body-bg: #F3F3FB;
+
 // Import Bootstrap and its default variables
+$enable-rounded:   false;
 @import '~bootstrap/scss/bootstrap.scss';
+.separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+.separator::before, .separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #000;
+}
+.separator::before {
+    margin-right: .25em;
+}
+.separator::after {
+    margin-left: .25em;
+}
