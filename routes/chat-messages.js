@@ -69,13 +69,9 @@ router.delete("/:id", async (req, res) => {
 router.post("/update/:id", async (req, res) => {
   try {
     let chatMessage = await ChatMessage.findById(req.params.id);
-    [chatMessage.senderUsername, chatMessage.receiverUsername, chatMessage.message] = [
-      req.body.senderUsername,
-      req.body.receiverUsername,
-      req.body.message,
-    ];
+    Object.assign(chatMessage, req.body);
     await chatMessage.save();
-    res.json("ChatMessage  updated");
+    res.json("ChatMessage updated");
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
