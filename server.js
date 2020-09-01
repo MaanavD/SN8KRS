@@ -16,8 +16,7 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, "client", "build")))
 
 const uri = process.env.ATLAS_URI;
-mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true }
-);
+mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true });
 const connection = mongoose.connection;
 connection.once('open', () => {
   console.log("MongoDB database connection established successfully");
@@ -31,7 +30,7 @@ const chatMessagesRouter = require('./routes/chat-messages');
 app.use('/users', usersRouter);
 app.use('/shoes', shoesRouter);
 app.use('/offers', offersRouter);
-app.use('/messages', chatMessagesRouter);
+app.use('/chatmessages', chatMessagesRouter);
 
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client", "build", "index.html"));

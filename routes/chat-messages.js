@@ -1,5 +1,5 @@
 const router = require("express").Router();
-let ChatMessage = require("../models/chat-message.model");
+let ChatMessage = require("../models/chat-message.model.js");
 
 router.get("/", async (req, res) => {
   try {
@@ -11,18 +11,19 @@ router.get("/", async (req, res) => {
 });
 
 // returns all incoming messages sent to a specific user
-router.get("/receiverUsername/:username", async (req, res) => {
+router.get("/receiverUsername/:receiverUsername", async (req, res) => {
   try {
+    console.log(req.params.receiverUsername);
     let chatMessages = await ChatMessage.find({ receiverUsername: req.params.receiverUsername });
-    chatMessages.sort()
+    chatMessages.sort();
     res.json(chatMessages);
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
 })
 
-// returns all outgoing messages sent to a specific user
-router.get("/senderUsername/:username", async (req, res) => {
+// returns all outgoing messages from a specific user
+router.get("/senderUsername/:senderUsername", async (req, res) => {
   try {
     let chatMessages = await ChatMessage.find({ senderUsername: req.params.senderUsername });
     chatMessages.sort()
@@ -79,3 +80,7 @@ router.post("/update/:id", async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 });
+
+// all the messages from a specific person
+
+module.exports = router;
