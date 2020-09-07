@@ -15,7 +15,7 @@ const setLog = () => {
     <div className="container">
       <div className="row" style={{ height: "100vh" }}>
         <div className="col-lg-7 align-self-center">
-          <h1 className="display-1 nowrap">
+          <h1 className="display-1">
             SN<span className="text-primary">8</span>KRS{" "}
             <i className="fas fa-shoe-prints text-primary"></i>
           </h1>
