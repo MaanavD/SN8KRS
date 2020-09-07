@@ -35,7 +35,6 @@ const Login = () => {
                 <div class="separator">
                   &nbsp;&nbsp;&nbsp;OR&nbsp;&nbsp;&nbsp;
                 </div>
-
                 <button
                   type="submit"
                   className="btn btn-block shadow mt-4"
