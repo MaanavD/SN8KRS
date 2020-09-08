@@ -27,8 +27,7 @@ router.get("/recent/receiverUsername/:receiverUsername", async (req, res) => {
     console.log(req.params.receiverUsername);
     let chatMessages = await ChatMessage.find({ receiverUsername: req.params.receiverUsername });
     var chatMessagesDict = {};
-    for (var i=0;i<chatMessages.length;i++) {
-      chatMessage = chatMessages[i];
+    for (let chatMessage of chatMessages) {
       chatMessagesDict[chatMessage.senderUsername] = chatMessage
     }
     console.log(chatMessagesDict);
@@ -36,7 +35,6 @@ router.get("/recent/receiverUsername/:receiverUsername", async (req, res) => {
     for (let key in chatMessagesDict) {
       ans.push(chatMessagesDict[key])
     }
-    // chatMessages.sort();
     res.json(ans);
   } catch (err) {
     res.status(500).json({ message: err.message });
