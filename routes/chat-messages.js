@@ -22,6 +22,25 @@ router.get("/receiverUsername/:receiverUsername", async (req, res) => {
   }
 })
 
+router.get("/recent/receiverUsername/:receiverUsername", async (req, res) => {
+  try {
+    console.log(req.params.receiverUsername);
+    let chatMessages = await ChatMessage.find({ receiverUsername: req.params.receiverUsername });
+    var chatMessagesDict = {};
+    for (let chatMessage of chatMessages) {
+      chatMessagesDict[chatMessage.senderUsername] = chatMessage
+    }
+    console.log(chatMessagesDict);
+    var ans = [];
+    for (let key in chatMessagesDict) {
+      ans.push(chatMessagesDict[key])
+    }
+    res.json(ans);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+})
+
 // returns all outgoing messages from a specific user
 router.get("/senderUsername/:senderUsername", async (req, res) => {
   try {
